@@ -55,7 +55,7 @@ body {
   }
 }
 .backGroundImg{
-  background-image: url("covid2.png");
+  background-image: url("images/covid2.png");
   background-color: black;
   background-repeat: no-repeat, repeat;
   height: 450px;
@@ -63,7 +63,7 @@ body {
   background-size: cover; 
 }
 .formstyle{
-  margin-top: 170px;
-  margin-left: 38%;
+  margin-top: 290px;
 }
+
 

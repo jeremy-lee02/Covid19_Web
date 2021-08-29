@@ -89,7 +89,7 @@ function App() {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>Covid-19 tracker</h1>
+          <h1 className="text-warning">Covid-19 tracker</h1>
           <FormControl className="app__dropdown bg-light">
             <Select
               variant="outlined"
@@ -148,10 +148,10 @@ function App() {
         />
       </div>
       <Card className="app__right">
-        <CardContent>
-          <h1>Live Cases by Country</h1>
+        <CardContent className="bg-dark text-light">
+          <h1 className="text-danger">Live Cases by Country</h1>
           <Table countries={tableData} />
-          <h1 className="app__graphTitle">WorldWide new {casesType}</h1>
+          <h1 className="app__graphTitle text-danger">WorldWide new {casesType}</h1>
           <LineGraph className="app__graph" casesType={casesType} />
         </CardContent>
         {/* Table */}

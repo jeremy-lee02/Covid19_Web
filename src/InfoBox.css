@@ -4,9 +4,8 @@
   flex: 1;
   cursor: pointer;
 }
-
 .infoBox:not(:last-child) {
-  margin-right: 40px;
+  margin-right: 12px;
 }
 
 .infoBox__cases {
@@ -32,7 +31,7 @@
 }
 
 .infoBox--grey {
-  border-color: black;
+  border-color: grey;
 }
 
 .infoBox__cases--grey {
@@ -40,7 +39,7 @@
 }
 
 .infoBox__total {
-  color: #6c757d;
+  color: black !important;
   font-weight: 700 !important;
   font-size: 0.9rem !important;
   margin-top: 15px !important;
