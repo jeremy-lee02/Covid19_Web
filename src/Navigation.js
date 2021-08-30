@@ -2,6 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import App from './App';
+import DisplayHis from './DisplayHis';
+import "./App.css";
+// import "./Table.css";
 
 export default function Navigation() {
   return (
@@ -103,8 +106,14 @@ export function Profile() {
 
 export function History() {
   return (
-    <div>
-      <h2>History</h2>
+    <div className="bg-secondary">
+      <div className = "backGroundImg">
+      </div>
+      <div>
+        <div style={{padding:".5em 1.5em"}}><h1 className="text-center">History</h1></div>
+        <DisplayHis />
+      </div>
+
     </div>
   )
 }
