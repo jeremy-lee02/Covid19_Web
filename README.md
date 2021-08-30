@@ -11,6 +11,13 @@ Deployed live on https://covid-19-tracker-6b428.web.app/ . Check out!
 
 ![](Covid_tracker_sample.PNG)
 
+# Contribution:
+1. Le Trung Tin (s3752975):
+2.
+3.
+4.
+5.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
