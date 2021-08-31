@@ -13,8 +13,8 @@ Deployed live on https://covid-19-tracker-6b428.web.app/ . Check out!
 
 # Contribution:
 1. Le Trung Tin (s3752975):
-2.
-3.
+2. Nguyen Thanh Linh (s3635080)
+3. Nguyen Xuan Hoang Phuc (s3595035)
 4.
 5.
 
