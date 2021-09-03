@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import App from '../App';
 import DisplayHis from './DisplayHis';
 import "../App.css";
+import LoginForm from './LoginForm';
 // import "./Table.css";
 
 export default function Navigation() {
@@ -13,7 +14,7 @@ export default function Navigation() {
       <nav className="navbar navbar-expand-sm bg-dark navbar-secondary fixed-top">
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            <li className="nav-item ">
               <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
@@ -93,9 +94,7 @@ export function Profile() {
 
 export function History() {
   return (
-    <div className="bg-secondary">
-      <div className = "backGroundImg">
-      </div>
+    <div className="bg-secondary"><br/>
       <div>
         <div style={{padding:".5em 1.5em"}}><h1 className="text-center">History</h1></div>
         <DisplayHis />
@@ -108,8 +107,12 @@ export function History() {
 export function SignIn() {
   return (
     <div>
-      <h2>Sign In</h2>
+      <div className="backGroundImg2"></div>
+      <div className = "bg-secondary">
+        <LoginForm />
+      </div>
     </div>
+
   )
 }
 

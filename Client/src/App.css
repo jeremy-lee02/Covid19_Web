@@ -65,5 +65,26 @@ body {
 .formstyle{
   margin-top: 290px;
 }
+.nav-link{
+  color: white;
+  font-size: 20px;
+}
+.hover :hover{
+  background-color: #343a40;
+  color: white;
+}
+.nav-link{
+  font-size: 24px;
+}
+
+.backGroundImg2{
+  background-image: url("./images/covid2.png");
+  background-color: black;
+  background-repeat: no-repeat, repeat;
+  height: 410px;
+  background-position: center;
+  background-size: cover; 
+}
+
 
 
