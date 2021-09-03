@@ -12,7 +12,7 @@ const User = require('../models/User')
 //@access Public
 router.post('/register', async(req,res)=>{
     try {
-        const { email, password, personalInfo, date}= req.body
+        const { email, password, personalInfo, date, to}= req.body
         if (!(email&&password&&personalInfo)){
             res.status(400).send("Missing email or password")
         }
@@ -25,16 +25,36 @@ router.post('/register', async(req,res)=>{
             email,
             password:hashPass,
             personalInfo,
-            date
+            date,
         })
+        const token = jwt.sign(
+            { newUser_id: newUser._id,email},
+            process.env.ACCESS_TOKEN,
+            {
+              expiresIn: "2h",
+            }
+          );
+          //Console log token 
+          console.log(token)
+          // save user token
+          newUser.token = token;
+      
+          // return new user
+          res.status(201).json(newUser);
+        } catch (err) {
+          console.log(err);
+        }
+
+      
+          
 
         //Token
-        const token = jwt.sign({userID:newUser._id}, process.env.ACCESS_TOKEN)
-        res.json({success:true,message:"Success!!" , token})
-    } catch (error) {
-        console.log(error)
+    //     const token = jwt.sign({userID:newUser._id}, process.env.ACCESS_TOKEN)
+    //     res.json({success:true,message:"Success!!" , token})
+    // } catch (error) {
+    //     console.log(error)
         
-    }
+    // }
     // const{ email, password } = req.body
     //simple validation
     // if(!email || !password)

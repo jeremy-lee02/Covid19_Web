@@ -11,22 +11,6 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    // fullName:{
-    //     type:String,
-    //     required: true
-    // },
-    // dob:{
-    //     type:String,
-    //     required: true
-    // },
-    // phone:{
-    //     type:String,
-    //     required: true
-    // },
-    // address:{
-    //     type:String,
-    //     required: true
-    // },
     personalInfo:{
         fullName:{type:String,required:true},
         dob:{type:String,required:true},
@@ -36,6 +20,10 @@ const UserSchema = new Schema({
     date:{
         type: Date,
         default: Date.now
+    },
+    token:{
+        type:{String},
+        default:null
     }
 })
 

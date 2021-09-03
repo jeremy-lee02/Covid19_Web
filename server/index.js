@@ -35,6 +35,4 @@ app.get('/users', function(req, res){
  })
 
 
-
-const PORT = 4000
-app.listen(PORT,()=> console.log(`Sever started on port ${PORT}`))
+app.listen(process.env.PORT,()=> console.log(`Sever started on port ${process.env.PORT}`))
