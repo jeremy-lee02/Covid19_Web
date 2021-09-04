@@ -77,7 +77,7 @@ function App() {
         setLoading(false);
         // console.log([data.countryInfo.lat, data.countryInfo.long]);
         countryCode === "worldwide"
-          ? setMapCenter([34.80746, -40.4796])
+          ? setMapCenter([34.810, -40.4783])
           : setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setZoom(4);
       });
