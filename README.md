@@ -1,38 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@hoangphuc211 
-hoangphuc211
-/
-Covid19_Web
-forked from jeremy-lee02/Covid19_Web
-0
-01
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Covid19_Web
-/
-README.md
-in
-main
- 
 
-Spaces
-
-2
-
-Soft wrap
-1
 # Covid-19 Tracker App
 2
 ​
