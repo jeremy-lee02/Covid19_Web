@@ -6,6 +6,8 @@ import DisplayHis from './DisplayHis';
 import "../App.css";
 import LoginForm from './LoginForm';
 // import "./Table.css";
+import RegisterForm from './RegisterForm';
+// import HealthForm from './Form/HealthForm';
 
 export default function Navigation() {
   return (
@@ -79,7 +81,7 @@ export function Home() {
 export function Form() {
   return (
     <div>
-      <h2>Form</h2>
+      {/* <HealthForm /> */}
     </div>
   )
 }
@@ -119,7 +121,10 @@ export function SignIn() {
 export function Register() {
   return (
     <div>
-      <h2>Register</h2>
+      <div className="backGroundImg2"></div>
+      <div className = "bg-secondary">
+        <RegisterForm />
+      </div>
     </div>
   )
 }
