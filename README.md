@@ -22,8 +22,8 @@ Key Aspects:
 1. Le Trung Tin (s3752975):
 2. Nguyen Thanh Linh (s3635080)
 3. Nguyen Xuan Hoang Phuc (s3595035)
-4.
-5.
+4. Nguyen Dang Huy (s3741303)
+5. Nguyen Truong An (s3778388)
 
 ## Prerequisites
 
@@ -33,7 +33,8 @@ Visual Studio Code :
 ## Build and Run
 
 Step 1: Clone this repo.  
-Step 2: Open Covid19_Web as a project in Visual Studio Code.  
-Step 3: Open terminal on project directory.  
-Step 4: Run npm install(if not installed) and npm start.  
-Step 5: Access to localhost to see result
+Step 2: Open Covid19_Web as a project in Visual Studio Code or any code editor.  
+Step 3: Open terminal on project directory. 
+Step 4: Change directory to client 'cd client'.
+Step 5: Run npm install(if not installed) and npm start.  
+Step 6: Access to localhost to see result.
