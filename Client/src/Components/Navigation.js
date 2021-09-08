@@ -7,7 +7,7 @@ import "../App.css";
 import LoginForm from './LoginForm';
 // import "./Table.css";
 import RegisterForm from './RegisterForm';
-// import HealthForm from './Form/HealthForm';
+import HealthForm from './Form/HealthForm';
 
 export default function Navigation() {
   return (
@@ -80,8 +80,8 @@ export function Home() {
 
 export function Form() {
   return (
-    <div>
-      {/* <HealthForm /> */}
+    <div className="bg-secondary">
+      <HealthForm />
     </div>
   )
 }
