@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch, useHistory } from 'react-router-dom';
 import App from '../App';
 import DisplayHis from './DisplayHis';
 import "../App.css";
@@ -10,7 +10,9 @@ import RegisterForm from './RegisterForm';
 import HealthForm from './Form/HealthForm';
 
 export default function Navigation() {
-  const user = null;
+  const user = null
+
+
   return (
     <div className="bg-light">
     <Router>
@@ -32,7 +34,7 @@ export default function Navigation() {
           </ul>
           <div class="d-flex position-absolute end-0 me-4">
             {user?(
-              <Link className="btn btn-primary rounded-pill me-3" >Log Out</Link>
+              <Link className="btn btn-primary rounded-pill me-3">Log Out</Link>
               
             ):(
               <>
