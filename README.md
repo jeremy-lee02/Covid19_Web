@@ -36,6 +36,9 @@ Step 1: Clone this repo.
 Step 2: Open Covid19_Web as a project in Visual Studio Code or any code editor.  
 Step 3: Open terminal on project directory.  
 Step 4 (For front-end server): Run 'npm install' and 'npm i react-country-region-selector' (if not installed).
+
 Step 5 (For back-end): Run 'npm i express mongoose argon2 dotenv jsonwebtoken' (if not installed).
+
 Step 6: 'cd client' and run 'npm start' (For front-end) OR 'cd server' and run 'npm run server' (For back-end).
+
 Step 7: Access to localhost:3000 (for front-end) and localhost:4000 (for back-end) to see result.
