@@ -10,6 +10,7 @@ import RegisterForm from './RegisterForm';
 import HealthForm from './Form/HealthForm';
 
 export default function Navigation() {
+  const user = null;
   return (
     <div className="bg-light">
     <Router>
@@ -30,8 +31,16 @@ export default function Navigation() {
             </li>
           </ul>
           <div class="d-flex position-absolute end-0 me-4">
-            <Link className="btn btn-outline-primary rounded-pill me-2" to="/signIn">Sign In</Link>
-            <Link className="btn btn-primary rounded-pill" to="/register">Register</Link>
+            {user?(
+              <Link className="btn btn-primary rounded-pill me-3" >Log Out</Link>
+              
+            ):(
+              <>
+                <Link className="btn btn-primary rounded-pill me-3" to="/signIn">Sign In</Link>
+                <Link className="btn btn-primary rounded-pill" to="/register">Register</Link>  
+              </>
+
+            )}
           </div>
         </div>
       </nav>

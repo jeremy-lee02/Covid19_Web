@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 const authRouter = require('./routes/auth')
 const Users = require('./models/User')
 require('dotenv').config()
+const cors = require('cors')
+
+
 
 
 const connectDB = async()=> {
@@ -22,8 +25,8 @@ const connectDB = async()=> {
 
 
 connectDB()
-
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 app.use('/', authRouter)

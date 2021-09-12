@@ -7,37 +7,46 @@ require('dotenv').config()
 const User = require('../models/User')
 
 
-// @route POST api/auth/register
+// @route POST /register
 //@desc Register user
 //@access Public
 router.post('/register', async(req,res)=>{
     try {
-        const { email, password, personalInfo, date}= req.body
-        if (!(email&&password&&personalInfo)){
-            res.status(400).send("Missing email or password")
+        const { email, password, firstName, lastName,dob,phone,address}= req.body
+        const validation = ()=>{
+          if(!email||!password){
+            return false
+          }
         }
+        if(validation||!personalInfo){
+          res.status(400).json({message:"All input is required"})
+        }
+
+        // if (!email||!password||!personalInfo){
+        //     res.status(400).send("All input is required")
+        // }
+        //check existing email, phone number
         const oldUser = await User.findOne({email})
         if(oldUser)
-        return res.status(400).send('Email is already exist')
+        return res.status(400).json({message:'Email is already exist'})
         //hash password
         const hashPass = await argon.hash(password)
         const newUser = await User.create({
             email,
             password:hashPass,
-            personalInfo,
-            date,
+            name:`${firstName} ${lastName}`,
+            dob,
+            phone,
+            address
         })
         const token = jwt.sign(
-            { newUser_id: newUser._id,email},
-            process.env.ACCESS_TOKEN,
-            {
-              expiresIn: "2h",
-            }
-          );
-          //Console log token 
-          console.log(token)
-          // save user token
-          newUser.token = token;
+          { newUser_id: newUser._id,email},
+          process.env.ACCESS_TOKEN,
+          {
+            expiresIn: "2h",
+          }
+        );
+        newUser.token = token;
       
           // return new user
           res.status(201).json(newUser);
@@ -54,7 +63,7 @@ router.post("/login", async (req, res) => {
 
     // Validate user input
     if (!(email && password)) {
-      res.status(400).send("All input is required");
+      res.status(400).json({message:"All input is required"});
     }
     // Validate if user exist in our database
     const user = await User.findOne({ email });
@@ -70,12 +79,13 @@ router.post("/login", async (req, res) => {
       );
 
       // save user token
-      user.token = token;
+      // user.token = token;
 
       // user
-      res.status(200).json(user);
+      res.status(200).json({result: user, token});
+      res.status(200).send("Login successful!");
     }
-    res.status(400).send("Invalid Credentials");
+    res.status(400).json({message:"Invalid Credentials"});
   } catch (err) {
     console.log(err);
   }
