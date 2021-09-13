@@ -45,6 +45,9 @@ export default function RegisterForm() {
             history.push('/signIn')
         } catch (error) {
             setError(error.response.data.error)
+            setEmail('')
+            setPassword('')
+            setRePassword('')
             setTimeout(()=>{
                 setError("")
             },5000)
