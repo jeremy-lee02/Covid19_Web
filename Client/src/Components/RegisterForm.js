@@ -1,10 +1,11 @@
-import React, {useEffect,useState} from 'react'
+import React, {useState} from 'react'
 import '../style/Login.css'
 import { useHistory } from 'react-router-dom'
+import axios from 'axios'
 
 export default function RegisterForm() {
     const history = useHistory()
-    const [data,setData] = useState([])
+    // const [data,setData] = useState([])
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [rePassword,setRePassword] = useState('')
@@ -19,6 +20,9 @@ export default function RegisterForm() {
 
     const registerHandle = async(e)=>{
         e.preventDefault()
+        const config = {
+            header:{"Content-Type":'application/json'}
+        }
         if(password!==rePassword){
             setPassword('');
             setRePassword('');
@@ -28,13 +32,7 @@ export default function RegisterForm() {
             return setError("Passwords do not match!!")
         }
         try {
-            fetch(endPoint, {
-                method:'Post',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
+            const {data} =await axios.post(endPoint,{
                     email: email,
                     password: password,
                     firstName: firstName,
@@ -42,26 +40,18 @@ export default function RegisterForm() {
                     dob: dob,
                     phone: phone,
                     address: address
-                })
-            }).then(data => setData(data))
-            localStorage.setItem("token", data.token)
-            history.push('/profile')
+            },config)
+            localStorage.setItem('authToken',data.token)
+            history.push('/signIn')
         } catch (error) {
-            setError(error.response.data._message)
+            setError(error.response.data.error)
             setTimeout(()=>{
                 setError("")
             },5000)
         }
 
     }
-    const load = ()=>{
-        fetch(endPoint)
-            .then(response => response.json())
-            .then(data => setData(data.users));
-    }
-    useEffect(() => {
-        load()
-      }, [])
+
      
     return (
         <div>

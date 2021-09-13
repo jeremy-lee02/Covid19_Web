@@ -1,18 +1,24 @@
-import { Jwt } from "jsonwebtoken";
-require('dotenv').config()
+const jwt  = require('jsonwebtoken')
+const User =require('../models/User')
+const ErrorResponse = require('../utils/errRes')
 
-const verifyToken = async (req,res,next) =>{
-    try {
-        const token = req.body.token || req.query.token || req.headers["x-access-token"];
-        if(token){
-            const decodeData = jwt.verify(token, process.env.ACCESS_TOKEN)
-            req.user = decodeData
-        }else{
-            return res.status(403).send("A token is required for authentication")
-        }    
-    } catch (error) {
-        return res.status(401).send("Invalid Token")
+exports.protect = async (req,res,next)=>{
+    let token
+    if (req.headers.authorization&& req.headers.authorization.startsWith("HelloWorld")) {
+        token = req.headers.authorization.split(" ")[1]
     }
-    return next()
-}
-module.exports =verifyToken
+    if (!token) {
+        return next(new ErrorResponse("Not authorized to access",401))
+    }
+    try {
+        const decoded = jwt.verify(token,process.env.ACCESS_TOKEN)
+        const user =await User.findById(decoded.id)
+        if(!user){
+            return next(new ErrorResponse('No user found with this id',404))
+        }
+        req.user=user
+        next()
+    } catch (error) {
+        return next(new ErrorResponse('Not authorized', 401))
+    }
+} 

@@ -4,6 +4,7 @@ const authRouter = require('./routes/auth')
 const Users = require('./models/User')
 require('dotenv').config()
 const cors = require('cors')
+const ErrorHandle = require('./middleware/error')
 
 
 
@@ -30,6 +31,9 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/', authRouter)
+app.use('/private', require('./routes/private'))
+
+app.use(ErrorHandle)
 
 app.get('/users', function(req, res){
     Users.find({}, function(err, users){
