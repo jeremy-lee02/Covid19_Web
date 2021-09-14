@@ -75,7 +75,7 @@ function App() {
         setCountry(countryCode);
         setCountryInfo(data);
         setLoading(false);
-        // console.log([data.countryInfo.lat, data.countryInfo.long]);
+        //coordination of the sea
         countryCode === "worldwide"
           ? setMapCenter([34.810, -40.4783])
           : setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
