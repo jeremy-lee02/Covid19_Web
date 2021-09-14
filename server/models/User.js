@@ -17,10 +17,10 @@ const UserSchema = new Schema({
             type: String,
             required: [true, "Please enter a password"]
         },
-        name:{type:String,required:true},
-        dob:{type:String,required:true},
-        phone:{type:String,required:true},
-        address:{type:String,required:true},
+        name:{type:String,required:[true,"Please provide a Firstname and Lastname"]},
+        dob:{type:String,required:[true,"Please provide date of birth"]},
+        phone:{type:String,required:[true,"Please provide phone number"]},
+        address:{type:String,required:[true,"Please provide address"]},
         
         date:{
             type: Date,
