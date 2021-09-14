@@ -5,34 +5,38 @@ const axios = require('axios');
 
 export default function LoginForm() {
     const history = useHistory()
-    const [data,setData] = useState([])
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [error, setError] = useState('')
     const endPoint = "http://localhost:4000/login"
+
+    useEffect(()=>{
+        if(localStorage.getItem("authToken")){
+            history.push('/')
+        }
+    },[])
     const loginHandle = async (e)=>{
         e.preventDefault()
-        if ((email || password) === '') {
+        const config = {
+            header:{"Content-Type":'application/json'}
+        }
+        try {
+            const {data} =await axios.post(endPoint,{
+                    email: email,
+                    password: password
+            },config)
+            localStorage.setItem('authToken',data.token)
+            history.push('/')
+        } catch (error) {
+            setError(error.response.data.error)
             setEmail('')
             setPassword('')
             setTimeout(()=>{
-                setError('')
-            }, 5000)
-            return setError('All input is required')
-        } 
-        try {
-            const response = await axios.post(endPoint)
-            if (response.data.success)
-            localStorage.setItem('token', response.data.token)
-            return response.data
-        } catch (error) {
-            if(error.response.data) return setError(error.response.data)
-            else return{success:'false', message: error.message}
+                setError("")
+            },5000)
         }
         
     }
-
-
     return (
         <div className="app">
             <div className="containerr">

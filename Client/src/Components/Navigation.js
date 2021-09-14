@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Link, Route, Switch, useHistory } from 'react-router-dom';
 import App from '../App';
-import DisplayHis from './DisplayHis';
+import ProfilePage from './ProfilePage';
 import "../App.css";
 import LoginForm from './LoginForm';
 // import "./Table.css";
 import RegisterForm from './RegisterForm';
 import HealthForm from './Form/HealthForm';
+import Buttons from './Buttons';
 
 export default function Navigation() {
-  const user = null
-
+  
 
   return (
     <div className="bg-light">
@@ -28,21 +28,9 @@ export default function Navigation() {
             <li className="nav-item">
               <Link className="nav-link" to="/form">Form</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/history">History</Link>
-            </li>
           </ul>
-          <div class="d-flex position-absolute end-0 me-4">
-            {user?(
-              <Link className="btn btn-primary rounded-pill me-3">Log Out</Link>
-              
-            ):(
-              <>
-                <Link className="btn btn-primary rounded-pill me-3" to="/signIn">Sign In</Link>
-                <Link className="btn btn-primary rounded-pill" to="/register">Register</Link>  
-              </>
-
-            )}
+          <div class="d-flex position-absolute end-0 me-4"> 
+            <Buttons />
           </div>
         </div>
       </nav>
@@ -57,9 +45,6 @@ export default function Navigation() {
           </Route>
           <Route path="/profile">
             <Profile />
-          </Route>
-          <Route path="/history">
-            <History />
           </Route>
           <Route path="/signIn">
             <SignIn />
@@ -99,23 +84,13 @@ export function Form() {
 
 export function Profile() {
   return (
-    <div>
-      <h2>Profile</h2>
+    <div className = "bg-secondary"> 
+      <br/>
+      <ProfilePage />
     </div>
   )
 }
 
-export function History() {
-  return (
-    <div className="bg-secondary"><br/>
-      <div>
-        <div style={{padding:".5em 1.5em"}}><h1 className="text-center">History</h1></div>
-        <DisplayHis />
-      </div>
-
-    </div>
-  )
-}
 
 export function SignIn() {
   return (

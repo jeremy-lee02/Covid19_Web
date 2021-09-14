@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import '../style/Login.css'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
@@ -18,6 +18,11 @@ export default function RegisterForm() {
     
     const endPoint = "http://localhost:4000/register"
 
+    useEffect(()=>{
+        if(localStorage.getItem("authToken")){
+            history.push('/')
+        }
+    },[])
     const registerHandle = async(e)=>{
         e.preventDefault()
         const config = {
