@@ -92,6 +92,7 @@ export function Profile() {
   return (
     <div className = "bg-secondary"> 
       <br/>
+      <h1 className="text-center">Profile</h1><br />
       <ProfilePage />
     </div>
   )

@@ -26,6 +26,7 @@ export default function LoginForm() {
                     password: password
             },config)
             localStorage.setItem('authToken',data.token)
+            localStorage.setItem('email',email)
             window.location= '/'
         } catch (error) {
             setError(error.response.data.error)
@@ -43,7 +44,7 @@ export default function LoginForm() {
                     <h2 className="text-center" style={{color:"blue"}}>Login</h2>
                     {error&&<p style={{color:"red"}}>*{error}</p>}
                     <input placeholder="Email" type="text" className="inputField input" value={email} onChange={(e)=>setEmail(e.target.value)}></input><br/>
-                    <input placeholder="Password" type="text" className="inputField input" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+                    <input placeholder="Password" type="password" className="inputField input" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
                     <div className="submitButton">
                         <button className="button" onClick={loginHandle}>Login</button>
                     </div>

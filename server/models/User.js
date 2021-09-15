@@ -10,11 +10,12 @@ const UserSchema = new Schema({
             type: String,
             required: [true, "Please provide a email"],
             unique: true, 
-            match: [/^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)*[^\.]\.[A-Za-z]{2,5}$/, "Invalid email"]
+            match: [/^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)*[^\.]\.[A-Za-z]{2,5}$/, "Please provide a valid email 'example@.com' "]
         },
         password:{
             type: String,
-            required: [true, "Please enter a password"]
+            required: [true, "Please enter a password"],
+            // match: [, "Password should contain at least 5 letter"]
         },
         name:{type:String,required:[true,"Please provide a Firstname and Lastname"]},
         dob:{type:String,required:[true,"Please provide date of birth"]},

@@ -69,8 +69,8 @@ export default function RegisterForm() {
                         <h2 className="text-center" style={{color:"blue"}}>Register</h2>
                         {error&&<p style={{color:"red"}}>*{error}</p>}        
                         <input placeholder="Email" type="text" className="inputField input" value={email} onChange={(e)=>setEmail(e.target.value)}></input><br/>
-                        <input placeholder="Password" type="text" className="inputField input" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-                        <input placeholder="Re-type Password" type="text" className="inputField input" value={rePassword} onChange={(e)=>setRePassword(e.target.value)}></input>
+                        <input placeholder="Password" type="password" className="inputField input" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+                        <input placeholder="Re-type Password" type="password" className="inputField input" value={rePassword} onChange={(e)=>setRePassword(e.target.value)}></input>
                         <input placeholder="First Name" type="text" className="inputField input" value={firstName} onChange={(e)=>setFirstName(e.target.value)}></input><br/>
                         <input placeholder="Last Name" type="text" className="inputField input" value={lastName} onChange={(e)=>setLastName(e.target.value)}></input><br/>
                         <input placeholder="Date Of Birth (DD//MM//YY)" type="text" className="inputField input" value={dob} onChange={(e)=>setDob(e.target.value)}></input><br/>

@@ -17,7 +17,8 @@ exports.register = async (req,res,next)=>{
             phone,
             address
         })
-        sendToken(user,201,res)
+        const token = jwt.sign({user_id:user._id,email},process.env.ACCESS_TOKEN,{expiresIn:'2h'})
+        res.status(202).json({success:true,token})
     } catch (error) {
         next(error)
     }   
@@ -38,7 +39,6 @@ exports.login = async (req,res,next)=>{
             return next(new ErrorResponse('Invalid Credentials',401))
         }
         const token = jwt.sign({user_id:user._id,email},process.env.ACCESS_TOKEN,{expiresIn:'2h'})
-        // sendToken(user,201,res)
         res.status(202).json({success:true,token})
     } catch (error) {
         res.status(500).json({
@@ -47,7 +47,3 @@ exports.login = async (req,res,next)=>{
         }) 
     }
 }
-// const sendToken =(user,statusCode,res)=>{
-//     const token = jwt.sign({user_id:user._id,email},process.env.ACCESS_TOKEN,{expiresIn:'2h'})
-//     res.status(statusCode).json({success:true,token})
-// }
