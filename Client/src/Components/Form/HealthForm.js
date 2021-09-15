@@ -95,14 +95,14 @@ export default function HealthForm() {
                     </Form.Group>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridCityZip">
-                        <Form.Label>Have you experienced any of the following symptoms within the past 14 days?<span> (*)</span></Form.Label>
+                        <Form.Label>Which symptoms have you experienced within the past 14 days?<span> (*)</span></Form.Label>
                         <Form.Control
                             type="text"                       
                             value={symptoms} onChange={(e)=>setSymptoms(e.target.value)}
                         />
                         </Form.Group>
                         <Form.Group>
-                        <Form.Label>Have you recently been directed to self-isolate or quarantine:<span> (*)</span></Form.Label>
+                        <Form.Label>Have you recently been directed to self-isolate or quarantine (Yes or No):<span> (*)</span></Form.Label>
                         <Form.Control placeholder=""value={isolated} onChange={(e)=>setIsolated(e.target.value)} />
                         </Form.Group>
                     </Form.Row>

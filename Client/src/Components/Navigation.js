@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Link, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import App from '../App';
 import ProfilePage from './ProfilePage';
 import "../App.css";
 import LoginForm from './LoginForm';
-
 import RegisterForm from './RegisterForm';
 import HealthForm from './Form/HealthForm';
 import Buttons from './Buttons';
 import Success from './Success';
+import HistoryCard from './HistoryCard';
 
 export default function Navigation() {
 
@@ -29,10 +29,13 @@ export default function Navigation() {
               : <Link className="nav-link" to="/signIn" >Profile</Link>
             }
             </li>
+            <li className="nav-item ">
+              <Link className="nav-link" to="/form">Form</Link>
+            </li>
             <li className="nav-item">
               {localStorage.getItem('authToken')
-              ? <Link className="nav-link" to="/form">Form</Link>
-              : <Link className="nav-link" to="/signIn">Form</Link>
+              ? <Link className="nav-link" to="/history">History</Link>
+              : <Link className="nav-link" to="/signIn">History</Link>
             }
             </li>
           </ul>
@@ -61,6 +64,9 @@ export default function Navigation() {
           </Route>
           <Route path="/success">
             <Success />
+          </Route>
+          <Route path="/history">
+            <History />
           </Route>
         </Switch>
     </Router>
@@ -123,6 +129,16 @@ export function Register() {
         <RegisterForm />
       </div>
     </div>
+  )
+}
+export function History(){
+  return(
+    <div>
+    <div className = "bg-secondary">
+      <HistoryCard />
+    </div>
+  </div>
+    
   )
 }
 
