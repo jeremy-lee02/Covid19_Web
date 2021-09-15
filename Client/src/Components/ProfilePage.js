@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {Form, Row, Jumbotron, Col, Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import '../style/profile.css'
 
 export default function ProfilePage() {

@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import '../style/Login.css'
-import { useHistory } from 'react-router-dom'
+
 import axios from 'axios'
 
 export default function RegisterForm() {
-    const history = useHistory()
+    
     // const [data,setData] = useState([])
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
@@ -20,7 +20,7 @@ export default function RegisterForm() {
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){
-            history.push('/')
+            window.location = '/singIn'
         }
     },[])
     const registerHandle = async(e)=>{
@@ -47,7 +47,7 @@ export default function RegisterForm() {
                     address: address
             },config)
             localStorage.setItem('authToken',data.token)
-            history.push('/signIn')
+            window.location = '/singIn'
         } catch (error) {
             setError(error.response.data.error)
             setEmail('')

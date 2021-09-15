@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const ErrorResponse = require('../utils/errRes')
 const jwt =require('jsonwebtoken')
+const Form =require('../models/forms')
 
 exports.register = async (req,res,next)=>{
     const {email,password,firstName,lastName,dob,phone,address} = req.body
@@ -46,4 +47,24 @@ exports.login = async (req,res,next)=>{
             error: error.message
         }) 
     }
+}
+exports.form =async(req,res,next)=>{
+    const{email,idNum,country,symptoms,beenCountry,isolated}= req.body
+    try {
+        const form = await Form.create({
+            email,
+            idNum,
+            country,
+            symptoms,
+            beenCountry,
+            isolated
+        })
+        res.status(202).json({success:true,form})
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        })
+    }
+
 }
