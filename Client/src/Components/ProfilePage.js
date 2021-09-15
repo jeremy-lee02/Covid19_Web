@@ -54,10 +54,7 @@ export default function ProfilePage() {
             return(<p className="information">{a.address}</p>)
           })}
         </Row>
-
       </div>
-
-
     )
 }
 
