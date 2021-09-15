@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const ErrorResponse = require('../utils/errRes')
+const jwt =require('jsonwebtoken')
 
 exports.register = async (req,res,next)=>{
     const {email,password,firstName,lastName,dob,phone,address} = req.body
@@ -36,7 +37,9 @@ exports.login = async (req,res,next)=>{
         if(!match){
             return next(new ErrorResponse('Invalid Credentials',401))
         }
-        sendToken(user,201,res)
+        const token = jwt.sign({user_id:user._id,email},process.env.ACCESS_TOKEN,{expiresIn:'2h'})
+        // sendToken(user,201,res)
+        res.status(202).json({success:true,token})
     } catch (error) {
         res.status(500).json({
             success: false,
@@ -44,7 +47,7 @@ exports.login = async (req,res,next)=>{
         }) 
     }
 }
-const sendToken =(user,statusCode,res)=>{
-    const token = user.getSignedToken()
-    res.status(statusCode).json({success:true,token})
-}
+// const sendToken =(user,statusCode,res)=>{
+//     const token = jwt.sign({user_id:user._id,email},process.env.ACCESS_TOKEN,{expiresIn:'2h'})
+//     res.status(statusCode).json({success:true,token})
+// }

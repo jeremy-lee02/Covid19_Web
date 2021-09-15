@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
-const jwt =require('jsonwebtoken')
 
 
 const UserSchema = new Schema({
@@ -41,8 +40,8 @@ UserSchema.pre("save",async function(next){
     next()
 })
 
-UserSchema.methods.getSignedToken = ()=>{
-    return jwt.sign({id:this._id},process.env.ACCESS_TOKEN, {expiresIn:'2h'})
-}
+// UserSchema.methods.getSignedToken = ()=>{
+//     return jwt.sign({id:this._id},process.env.ACCESS_TOKEN, {expiresIn:'2h'})
+// }
 
 module.exports = mongoose.model('users',UserSchema)

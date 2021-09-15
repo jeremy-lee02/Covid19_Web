@@ -1,28 +1,25 @@
-import React,{useState,useEffect}from 'react'
+import React from 'react'
 import axios from 'axios'
-import { useHistory, Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 
 function Buttons() {
-    const [isLoggedIn,setIsLoggedIn] =useState(false)
-    const history = useHistory()
+    const [isLogged, setIsLogged] = React.useState(false)
+    React.useEffect(()=>{
+        if(localStorage.getItem('authToken'))
+        return setIsLogged(true)
+    },[])
     const logOutHandle = ()=>{
-        localStorage.removeItem("authToken")
-        history.push('/SignIn')
+        localStorage.clear()
+        window.location = '/signIn'
     }
 
-    useEffect(()=>{
-        if(localStorage.getItem("authToken")){
-            setIsLoggedIn(true)
-        }else{
-            setIsLoggedIn(false)
-        }
-    }, [])
+
 
     return(
         <>
-           {isLoggedIn
-           ?    <Link className="btn btn-primary rounded-pill me-3" onClick={logOutHandle}>Log Out</Link>
-           : <>
+           {isLogged
+           ?    <Link className="btn btn-primary rounded-pill me-3" onClick={logOutHandle} >Log Out</Link>
+           :<>
             <Link className="btn btn-primary rounded-pill me-3" to="/signIn">Sign In</Link>
             <Link className="btn btn-primary rounded-pill" to="/register">Register</Link>
            </> 

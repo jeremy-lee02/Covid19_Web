@@ -5,13 +5,13 @@ import App from '../App';
 import ProfilePage from './ProfilePage';
 import "../App.css";
 import LoginForm from './LoginForm';
-// import "./Table.css";
+import Landing from '../Landing'
 import RegisterForm from './RegisterForm';
 import HealthForm from './Form/HealthForm';
 import Buttons from './Buttons';
 
 export default function Navigation() {
-  
+
 
   return (
     <div className="bg-light">
@@ -23,10 +23,16 @@ export default function Navigation() {
               <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/profile">Profile</Link>
+              {localStorage.getItem('authToken')
+              ? <Link className="nav-link" to="/profile" >Profile</Link>
+              : <Link className="nav-link" to="/signIn" >Profile</Link>
+            }
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/form">Form</Link>
+              {localStorage.getItem('authToken')
+              ? <Link className="nav-link" to="/form">Form</Link>
+              : <Link className="nav-link" to="/signIn">Form</Link>
+            }
             </li>
           </ul>
           <div class="d-flex position-absolute end-0 me-4"> 
@@ -43,7 +49,7 @@ export default function Navigation() {
           <Route path="/form">
             <Form />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile" >
             <Profile />
           </Route>
           <Route path="/signIn">
@@ -114,3 +120,5 @@ export function Register() {
     </div>
   )
 }
+
+
