@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./routes/auth')
 const Users = require('./models/User')
+const Forms =require('./models/forms')
 require('dotenv').config()
 const cors = require('cors')
 const ErrorHandle = require('./middleware/error')
@@ -38,6 +39,11 @@ app.use(ErrorHandle)
 app.get('/users', function(req, res){
     Users.find({}, function(err, users){
         res.send(users)
+    })
+ })
+ app.get('/api/forms', function(req, res){
+    Forms.find({}, function(err, forms){
+        res.send(forms)
     })
  })
 
