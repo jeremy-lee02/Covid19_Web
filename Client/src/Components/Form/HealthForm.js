@@ -4,6 +4,8 @@ import {Form, Row, Button, Col, Container, Jumbotron } from 'react-bootstrap';
 import { CountryDropdown} from 'react-country-region-selector';
 
 export default function HealthForm() {
+
+    const submitHandle =()=>{window.location = '/success'}
     return (
         
         <Container className = "container">
@@ -11,7 +13,7 @@ export default function HealthForm() {
                 <Col md={{ span: 6, offset: 3 }}>
                 <Jumbotron>
                     <h1>MEDICAL REPORT FORM</h1>
-                    <Form>
+                    <Form >
                     <Form.Group>
                         <h4>Personal information, Disease - Isolation - Exposure History</h4>
                         <Form.Label>First Name<span> (*)</span></Form.Label>
@@ -91,7 +93,7 @@ export default function HealthForm() {
                         
                     <br />
                     <br />
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" onClick={submitHandle}>
                     Submit
                 </Button>
                     </Form>

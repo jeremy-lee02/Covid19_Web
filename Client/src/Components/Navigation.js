@@ -5,10 +5,11 @@ import App from '../App';
 import ProfilePage from './ProfilePage';
 import "../App.css";
 import LoginForm from './LoginForm';
-import Landing from '../Landing'
+
 import RegisterForm from './RegisterForm';
 import HealthForm from './Form/HealthForm';
 import Buttons from './Buttons';
+import Success from './Success';
 
 export default function Navigation() {
 
@@ -57,6 +58,9 @@ export default function Navigation() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/success">
+            <Success />
           </Route>
         </Switch>
     </Router>
