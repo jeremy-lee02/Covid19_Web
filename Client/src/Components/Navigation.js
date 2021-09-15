@@ -133,7 +133,7 @@ export function Register() {
 }
 export function History(){
   return(
-    <div>
+    <div >
     <div className = "bg-secondary">
       <HistoryCard />
     </div>
