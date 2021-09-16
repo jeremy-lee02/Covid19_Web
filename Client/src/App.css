@@ -58,12 +58,12 @@ body {
   background-image: url("./images/covid2.png");
   background-color: black;
   background-repeat: no-repeat, repeat;
-  height: 450px;
+  height: 370px;
   background-position: center;
   background-size: cover; 
 }
 .formstyle{
-  margin-top: 290px;
+  margin-top: 250px;
 }
 .nav-link{
   color: white;
@@ -78,13 +78,20 @@ body {
 }
 
 .backGroundImg2{
-  background-image: url("./images/covid2.png");
+  background-image: url("./images/banner.jpg");
   background-color: black;
   background-repeat: no-repeat, repeat;
-  height: 410px;
+  height: 300px;
   background-position: center;
   background-size: cover; 
 }
+.bContain{
+  width: 60%;
+}
+.contain{
+  height: 100%;
+}
+
 
 
 
