@@ -20,7 +20,7 @@ export default function RegisterForm() {
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){
-            window.location = '/singIn'
+            window.location = '/'
         }
     },[])
     const registerHandle = async(e)=>{
@@ -47,7 +47,8 @@ export default function RegisterForm() {
                     address: address
             },config)
             localStorage.setItem('authToken',data.token)
-            window.location = '/singIn'
+            localStorage.setItem('email',email)
+            window.location = '/'
         } catch (error) {
             setError(error.response.data.error)
             setEmail('')
