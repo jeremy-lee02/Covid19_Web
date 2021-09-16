@@ -76,12 +76,29 @@ export default function Navigation() {
 export function Home() {
   return (
     <div className="bg-secondary">
-      <div className = "backGroundImg">
-        <br/>
-        <h1 className="text-center text-danger">Welcome to Our Covid Tracker App</h1>
-        <h6 className="text-center text-body">Educated your self better using this application</h6>
+      <div className ="backGroundImg2"></div>
+      <div className ="row">
+        <div className ="col-sm-3 contain">
+          <h2 className= "text-warning">Creators: </h2>
+          <br/>
+          <li>Nguyen Truong An (s3778388)</li>
+          <br/>
+          <li>Le Trung Tin (s3752975)</li>
+          <br/>
+          <li>Nguyen Dang Huy (s3741303)</li>
+          <br/>
+          <li>Nguyen Thanh Linh (s3635080)</li>
+          <br/>
+          <li>Nguyen Xuan Hoang Phuc (s3595035)</li>
+          <br/>
+          <p className="text-center">__________</p>
+        </div>
+        <div className = "backGroundImg col-sm-9 contain">
+          <h1 className="text-center text-danger">Welcome to Our Covid Tracker App</h1>
+          <h6 className="text-center text-body">Educated your self better using this application</h6>
 
-        <h6 className="formstyle text-center text-light"><button>For protected yourself, using the Tracker below to learn more about Covid cases!</button></h6>
+          <h6 className="formstyle text-center text-light"><button className="bContain">For protected yourself, using the Tracker below to learn more about Covid cases!</button></h6>
+        </div>
       </div>
       <div>
         <App />
