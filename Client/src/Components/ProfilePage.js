@@ -5,7 +5,7 @@ import '../style/profile.css'
 export default function ProfilePage() {
   const [data,setData] = useState([])
   // const [newData,setNewData] = useState([])
-  const endPoint = 'http://localhost:4000/users/'
+  const endPoint = '/users'
   React.useEffect(() => {
     fetch(endPoint)
       .then(response => response.json())

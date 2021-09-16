@@ -4,7 +4,7 @@ import{ Row} from 'react-bootstrap'
 
 function HistoryCard() {
     const [data, setData]= React.useState([])
-    const endPoint = 'http://localhost:4000/api/forms'
+    const endPoint = '/api/forms'
     React.useEffect(() => {
         fetch(endPoint)
           .then(response => response.json())

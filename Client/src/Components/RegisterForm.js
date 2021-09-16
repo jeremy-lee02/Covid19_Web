@@ -16,7 +16,7 @@ export default function RegisterForm() {
     const [address,setAddress] = useState('')
     const [error, setError] = useState('')
     
-    const endPoint = "http://localhost:4000/register"
+    const endPoint = "/register"
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){

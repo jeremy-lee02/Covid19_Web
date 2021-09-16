@@ -8,7 +8,7 @@ export default function LoginForm() {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [error, setError] = useState('')
-    const endPoint = "http://localhost:4000/login"
+    const endPoint = "/login"
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){
