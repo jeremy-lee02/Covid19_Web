@@ -1,4 +1,4 @@
-serever/node_modules
+node_modules
 server/.env
 client/node_modules
 client/ eslint-disable-next-line
