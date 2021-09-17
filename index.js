@@ -53,5 +53,5 @@ app.get('/users', function(req, res){
    });
    
 
-
-app.listen(process.env.PORT,()=> console.log(`Sever started on port ${process.env.PORT}`))
+const PORT = process.env.PORT ||4000
+app.listen(process.env.PORT,()=> console.log(`Sever started on port ${PORT}`))
