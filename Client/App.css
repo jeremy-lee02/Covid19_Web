@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: darkgray;
+}
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  color: aliceblue;
+}
+
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__left {
+  flex: 0.9;
+}
+
+.app__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__graphTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app__graph {
+  flex-grow: 1;
+}
+
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
+}
+.backGroundImg{
+  background-image: url("./images/covid2.png");
+  background-color: black;
+  background-repeat: no-repeat, repeat;
+  height: 370px;
+  background-position: center;
+  background-size: cover; 
+}
+.formstyle{
+  margin-top: 250px;
+}
+.nav-link{
+  color: orange;
+  font-size: 20px;
+  margin-right: 24px;
+}
+.hover :hover{
+  background-color: #343a40;
+  color: white;
+}
+
+.backGroundImg2{
+  background-image: url("./images/banner.jpg");
+  background-color: black;
+  background-repeat: no-repeat, repeat;
+  height: 300px;
+  background-position: center;
+  background-size: cover; 
+}
+.bContain{
+  width: 60%;
+}
+.contain{
+  height: 100%;
+}
+.box{
+  background-color: darkblue;
+  width: 65%;
+  font-size: 40px;
+  border: 8px solid green;
+  padding: 30px;
+  border-radius: 40%;
+  font-weight: 750;
+}
+.box2{
+  background-color: black;
+  width: 100%;
+  border: 5px solid darkred;
+  padding: 20px;
+  font-weight: 750;
+}
+
+
+
