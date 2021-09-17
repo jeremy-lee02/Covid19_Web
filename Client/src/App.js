@@ -66,7 +66,8 @@ function App() {
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
 
-    
+    //https://disease.sh/v3/covid-19/all
+    //https://disease.sh/v3/covid-19/countries/[countryCode]
 
     await fetch(url)
       .then((response) => response.json())
@@ -88,7 +89,7 @@ function App() {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1 className="text-warning">Covid-19 tracker</h1>
+          <h1 className="text-warning box text-center">Covid-19 tracker</h1>
           <FormControl className="app__dropdown bg-light">
             <Select
               variant="outlined"
@@ -138,19 +139,21 @@ function App() {
         <br/>
 
         {/* Map */}
-
+        <div className ="box2">
         <Map
           countries={mapCountries}
           center={mapCenter}
           zoom={zoom}
           casesType={casesType}
         />
+        </div>
+
       </div>
       <Card className="app__right">
-        <CardContent className="bg-dark text-light">
-          <h1 className="text-danger">Live Cases by Country</h1>
+        <CardContent className="bg-dark text-light box2">
+          <h1 className="text-warning box2">Live Cases by Country</h1>
           <Table countries={tableData} />
-          <h1 className="app__graphTitle text-danger">WorldWide new {casesType}</h1>
+          <h1 className="app__graphTitle text-warning box2">WorldWide new {casesType}</h1>
           <LineGraph className="app__graph" casesType={casesType} />
         </CardContent>
         {/* Table */}

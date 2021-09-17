@@ -89,7 +89,22 @@ body {
 .contain{
   height: 100%;
 }
-
+.box{
+  background-color: darkblue;
+  width: 65%;
+  font-size: 40px;
+  border: 8px solid green;
+  padding: 30px;
+  border-radius: 40%;
+  font-weight: 750;
+}
+.box2{
+  background-color: black;
+  width: 100%;
+  border: 5px solid darkred;
+  padding: 20px;
+  font-weight: 750;
+}
 
 
 
