@@ -55,6 +55,7 @@ app.get('/users', function(req, res){
      app.get('/', (req,res)=>{
          res.send('API running')
      })
+    }
 
 const PORT = process.env.PORT ||4000
 app.listen(process.env.PORT,()=> console.log(`Sever started on port ${PORT}`))
