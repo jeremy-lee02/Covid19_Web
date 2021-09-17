@@ -93,11 +93,16 @@ export function Home() {
           <br/>
           <p className="text-center">__________</p>
         </div>
-        <div className = "backGroundImg col-sm-9 contain">
-          <h1 className="text-center text-danger">Welcome to Our Covid Tracker App</h1>
-          <h6 className="text-center text-body">Educated your self better using this application</h6>
-
-          <h6 className="formstyle text-center text-light"><button className="bContain">For protected yourself, using the Tracker below to learn more about Covid cases!</button></h6>
+        <div className = "col-sm-9 backGroundImg contain">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <h1 className="text-center text-warning">Welcome to Our Covid Tracker App</h1>
+          <br/>
+          <br/>
+          <br/>
+          <h6 className="formstyle text-center text-light"><button className="bContain">In order to protected yourself, using the Tracker below to learn more about Covid cases!</button></h6>
         </div>
       </div>
       <div>
