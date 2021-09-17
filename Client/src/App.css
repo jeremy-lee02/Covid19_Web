@@ -55,7 +55,7 @@ body {
   }
 }
 .backGroundImg{
-  background-image: url("./images/covid2.png");
+  background-image: url("./images/darkblueBG.jpg");
   background-color: black;
   background-repeat: no-repeat, repeat;
   height: 370px;
@@ -63,7 +63,7 @@ body {
   background-size: cover; 
 }
 .formstyle{
-  margin-top: 250px;
+  margin-top: 95px;
 }
 .nav-link{
   color: orange;
@@ -88,6 +88,8 @@ body {
 }
 .contain{
   height: 100%;
+  border: 5px solid orange;
+  padding: 20px;
 }
 .box{
   background-color: darkblue;
