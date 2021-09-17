@@ -8,7 +8,7 @@ export default function LoginForm() {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [error, setError] = useState('')
-    const endPoint = "/login"
+    const endPoint = "https://covid-web-19-ayaka.herokuapp.com/login"
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){

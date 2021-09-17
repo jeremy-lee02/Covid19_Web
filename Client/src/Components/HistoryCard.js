@@ -4,7 +4,7 @@ import{ Row} from 'react-bootstrap'
 
 function HistoryCard() {
     const [data, setData]= React.useState([])
-    const endPoint = '/api/forms'
+    const endPoint = 'https://covid-web-19-ayaka.herokuapp.com/api/forms'
     React.useEffect(() => {
         fetch(endPoint)
           .then(response => response.json())

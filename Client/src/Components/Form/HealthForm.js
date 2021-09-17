@@ -12,7 +12,7 @@ export default function HealthForm() {
     const[beenCountry, setBeenCountry] = React.useState('')
     const[isolated, setIsolated] = React.useState('')
     const [error, setError] = React.useState('')
-    const endPoint = "http://localhost:4000/forms"
+    const endPoint = "https://covid-web-19-ayaka.herokuapp.com/forms"
 
 
 

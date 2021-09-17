@@ -5,7 +5,7 @@ import '../style/profile.css'
 export default function ProfilePage() {
   const [data,setData] = useState([])
   // const [newData,setNewData] = useState([])
-  const endPoint = '/users'
+  const endPoint = 'https://covid-web-19-ayaka.herokuapp.com/users'
   React.useEffect(() => {
     fetch(endPoint)
       .then(response => response.json())

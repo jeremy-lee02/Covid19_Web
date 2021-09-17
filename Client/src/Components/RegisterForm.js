@@ -16,7 +16,7 @@ export default function RegisterForm() {
     const [address,setAddress] = useState('')
     const [error, setError] = useState('')
     
-    const endPoint = "/register"
+    const endPoint = "https://covid-web-19-ayaka.herokuapp.com/register"
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){
