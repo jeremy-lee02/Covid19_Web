@@ -38,23 +38,11 @@ function HistoryCard() {
                                     </div>
                                 </div>
                             </div>
-                    
                         )  
                     }
                 })}
                 </Row>
             </div>
-            {data.map(a=>{
-                if(a.email !== localStorage.getItem('email'))
-                return(
-                    <div className="text-center">
-                        <h3 style={{color:'black'}}>You have not submitted any Health Declaration</h3>
-                        <a href='/form'>Fill in the Health Declaration Form</a>
-                    </div>
-                )
-
-            })}
-            
         </div>
     )
 }
