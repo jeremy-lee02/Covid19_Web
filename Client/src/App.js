@@ -90,7 +90,7 @@ function App() {
       <div className="app__left">
         <div className="app__header">
           <h1 className="text-warning box text-center">Covid-19 tracker</h1>
-          <FormControl className="app__dropdown bg-light">
+          <FormControl className="app__dropdown bg-dark">
             <Select
               variant="outlined"
               onChange={onCountryChange}
